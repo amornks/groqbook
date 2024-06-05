@@ -3,8 +3,13 @@ from groq import Groq
 import json
 import os
 from io import BytesIO
+from dotenv import load_dotenv
+import os 
 
-GROQ_API_KEY = os.environ.get("GROQ_API_KEY", None)
+load_dotenv()
+
+GROQ_API_KEY = os.environ['GROQ_API_KEY']
+#GROQ_API_KEY = os.environ.get("GROQ_API_KEY", None)
 
 if 'api_key' not in st.session_state:
     st.session_state.api_key = GROQ_API_KEY
